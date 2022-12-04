@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    background-image: url('../images/lotr_ring_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
+    margin-top: 5%;
+}
+
+.next {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    width: 100px;
+}
+
+.message {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.game {
+    margin: 10px;
+    padding: 10px;
+    background-color: #eee;
+}
+
+.question {
+    font-family: cursive;
+    font-size: 1.2em;
+    padding: 5px;
+    margin: 3px;
+}
+
+.opts button {
+    font-family: cursive;
+    margin: 3px;
+    text-transform: capitalize;
+    padding: 3px;
+    color: white;
+    background-color: black;
+    min-width: 90px;
+}
+
+.container {
+    width: 90vw;
+    margin: auto;
+    border: 1px solid #ddd;
+}
+
+#btn {
+    display: block;
+    padding: 10px;
+    font-size: 2em;
+    margin: auto;
+}
+
+button a {
+    text-decoration: none;
+}
