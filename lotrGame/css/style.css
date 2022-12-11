@@ -51,6 +51,15 @@ body {
     width: 90vw;
     margin: auto;
     border: 1px solid #ddd;
+    text-align: center;
+}
+
+button {
+    height: 2em;
+}
+
+button.btns {
+    height: 2em;
 }
 
 #btn {

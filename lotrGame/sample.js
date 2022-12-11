@@ -1,37 +1,24 @@
-let btn = document.querySelector('#btn');
+let btn1 = document.querySelector('#btn1');
+let btn2 = document.querySelector('#btn2');
+let btn3 = document.querySelector('#btn3');
+
+//button onclick functions
+btn1.addEventListener('click', () => {
+    document.body.style.backgroundImage = "url('./images/fotr_background.jpg')";
+});
+btn2.addEventListener('click', () => {
+    document.body.style.backgroundImage = "url('./images/ttt_background.jpeg')";
+});
+btn3.addEventListener('click', () => {
+    document.body.style.backgroundImage = "url('./images/rotk_background.webp')";
+});
 
 const main = document.querySelector('.container');
 const message = pageEles(main, 'div', 'Press Button to Start', 'message');
 const output = pageEles(main, 'div', '', 'game');
-let url = '';
+const url = 'json/fotrQues.json';
 const game = { score: 0 };
-
-if (btn.value == 'fotr') {
-    url = 'json/fotrQues.json';
-    document.body.style.backgroundImage = "url('./images/fotr_background.jpg')";
-
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.backgroundSize = 'cover';
-    backgroundBlendMode = 'lighten';
-
-}
-if (btn.value == 'ttt') {
-    url = 'json/tttQues.json';
-    document.body.style.backgroundImage = "url('./images/ttt_background.jpeg')";
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.backgroundSize = 'cover';
-    backgroundBlendMode = 'lighten';
-}
-if (btn.value == 'rotk') {
-    url = 'json/rotkQues.json';
-    document.body.style.backgroundImage = "url('./images/lotr_rotk_2_background.jpg')";
-    document.body.style.backgroundRepeat = 'no-repeat';
-    document.body.style.backgroundSize = 'cover';
-    backgroundBlendMode = 'lighten';
-}
-
 btn.onclick = loadData;
-
 
 //Make AJAX Request to JSON File and return Data
 function loadData() {
@@ -63,7 +50,7 @@ function createQuestion(data) {
         }
         const question = data.q.shift();
         data.counter++;
-        message.textContent = `Question ${data.counter} of ${data.total}`;
+        message.textContent = `Question${data.counter} of ${data.total}`;
         if (data.q.length == 0) {
             tBtn.textContent = 'End Game';
         }
