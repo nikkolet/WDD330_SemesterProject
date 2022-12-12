@@ -5,6 +5,7 @@ const message = pageEles(main, 'div', 'Press Button to Start', 'message');
 const output = pageEles(main, 'div', '', 'game');
 let url = '';
 const game = { score: 0 };
+const playAgain = pageEles(main, 'button', 'Play Again', '')
 
 if (btn.value == 'fotr') {
     url = 'json/fotrQues.json';
