@@ -33,12 +33,13 @@ if (btn.value == 'rotk') {
 
 btn.onclick = loadData;
 
-
+playAgain.style.display = 'none';
 
 //Make AJAX Request to JSON File and return Data
 function loadData() {
     btn.style.display = 'none';
     playAgain.style.display = 'none';
+
     fetch(url)
         .then(res => res.json())
         .then(data => {
