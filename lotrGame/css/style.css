@@ -3,13 +3,18 @@
 }
 
 body {
-    color: #fff;
+    color: #DBD2D2;
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     background-image: url('../images/lotr_ring_background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: lighten;
     margin-top: 5%;
+}
+
+#home {
+    background-color: #153D35;
+    color: #DBD2D2;
 }
 
 .next {
@@ -27,7 +32,7 @@ body {
 .game {
     margin: 10px;
     padding: 10px;
-    background-color: #eee;
+    background-color: #153D35;
 }
 
 .question {
@@ -42,24 +47,28 @@ body {
     margin: 3px;
     text-transform: capitalize;
     padding: 3px;
-    color: white;
-    background-color: black;
+    background-color: #ffc446;
+    color: #153D35;
     min-width: 90px;
 }
 
 .container {
     width: 90vw;
     margin: auto;
-    border: 1px solid #ddd;
     text-align: center;
+    background-color: 153D35;
 }
 
 button {
     height: 2em;
+    background-color: #ffc446;
+    color: #153D35;
 }
 
 button.btns {
     height: 2em;
+    background-color: #ffc446;
+    color: #153D35;
 }
 
 #btn {
@@ -69,6 +78,13 @@ button.btns {
     margin: auto;
 }
 
+#playAgain {
+    text-align: center;
+    margin: auto;
+    height: 4em;
+}
+
 button a {
     text-decoration: none;
+    color: #153D35;
 }

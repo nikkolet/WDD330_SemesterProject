@@ -1,11 +1,11 @@
 let btn = document.querySelector('#btn');
-
+let playAgain = document.querySelector("#playAgain");
 const main = document.querySelector('.container');
 const message = pageEles(main, 'div', 'Press Button to Start', 'message');
 const output = pageEles(main, 'div', '', 'game');
+
 let url = '';
 const game = { score: 0 };
-const playAgain = pageEles(main, 'button', 'Play Again', '')
 
 if (btn.value == 'fotr') {
     url = 'json/fotrQues.json';
@@ -34,9 +34,11 @@ if (btn.value == 'rotk') {
 btn.onclick = loadData;
 
 
+
 //Make AJAX Request to JSON File and return Data
 function loadData() {
     btn.style.display = 'none';
+    playAgain.style.display = 'none';
     fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -53,9 +55,10 @@ function loadData() {
 //Create Question - How user progresses within the game
 function createQuestion(data) {
     const el = pageEles(output, 'div', '', 'question');
-
+    playAgain.style.display = 'none';
     if (data.q.length == 0) {
         message.innerHTML = `<h1>Game Over</h1><div>${game.score} correct out of ${data.total} questions.</div>`;
+        playAgain.style.display = 'block';
     } else {
         const tBtn = pageEles(el, 'button', 'Next', 'next');
         tBtn.onclick = () => {
@@ -79,7 +82,7 @@ function outputQuestion(question, parent, tBtn) {
     console.log(question);
     const que = pageEles(parent, 'div', `${question.question}?`, 'question');
     const quote = question.quote;
-
+    playAgain.style.display = 'none';
     const arr = question.opt;
     arr.push(question.answer);
     arr.sort(() => {
