@@ -3,14 +3,13 @@ let playAgain = document.querySelector("#playAgain");
 const main = document.querySelector('.container');
 const message = pageEles(main, 'div', 'Press Button to Start', 'message');
 const output = pageEles(main, 'div', '', 'game');
-
+output.style.display = 'none';
 let url = '';
 const game = { score: 0 };
 
 if (btn.value == 'fotr') {
     url = 'json/fotrQues.json';
     document.body.style.backgroundImage = "url('./images/fotr_background.jpg')";
-
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundSize = 'cover';
     backgroundBlendMode = 'lighten';
@@ -30,16 +29,17 @@ if (btn.value == 'rotk') {
     document.body.style.backgroundSize = 'cover';
     backgroundBlendMode = 'lighten';
 }
-
+output.style.display = 'none';
 btn.onclick = loadData;
 
 playAgain.style.display = 'none';
 
 //Make AJAX Request to JSON File and return Data
 function loadData() {
+    message.style.display = 'block';
     btn.style.display = 'none';
     playAgain.style.display = 'none';
-
+    output.style.display = 'none';
     fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -57,6 +57,7 @@ function loadData() {
 function createQuestion(data) {
     const el = pageEles(output, 'div', '', 'question');
     playAgain.style.display = 'none';
+    output.style.display = 'none';
     if (data.q.length == 0) {
         message.innerHTML = `<h1>Game Over</h1><div>${game.score} correct out of ${data.total} questions.</div>`;
         playAgain.style.display = 'block';
@@ -83,6 +84,7 @@ function outputQuestion(question, parent, tBtn) {
     console.log(question);
     const que = pageEles(parent, 'div', `${question.question}?`, 'question');
     const quote = question.quote;
+    output.style.display = 'block';
     playAgain.style.display = 'none';
     const arr = question.opt;
     arr.push(question.answer);

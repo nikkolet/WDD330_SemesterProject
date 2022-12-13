@@ -15,6 +15,15 @@ body {
 #home {
     background-color: #153D35;
     color: #DBD2D2;
+    height: 20vh;
+}
+
+#home button {
+    margin-top: 2em;
+}
+
+h1 {
+    margin-top: 1em;
 }
 
 .next {
@@ -26,7 +35,9 @@ body {
 
 .message {
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 2em;
+    margin-top: -2em;
 }
 
 .game {
@@ -59,12 +70,7 @@ body {
     background-color: 153D35;
 }
 
-button {
-    height: 2em;
-    background-color: #ffc446;
-    color: #153D35;
-}
-
+button,
 button.btns {
     height: 2em;
     background-color: #ffc446;
